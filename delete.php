@@ -25,11 +25,15 @@ if ($res->user_id == $_SESSION['user_id']) {
 </form>";
 
 } else {
-    echo "You cannot delete this record"."<br>";
-    echo "<button><a href=\"index.php\">Cancel</a>";
+    echo "You cannot delete this record" . "<br>";
+    echo "<form action=\"index.php\" method=\"POST\">
+<input type=\"submit\" name=\"delete\" value=\"Delete\">
+<button><a href=\"index.php\">Cancel</a>
+</form>";
 
 }
 ?>
+
 </body>
 
 </html>
