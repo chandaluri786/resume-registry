@@ -79,7 +79,7 @@ count++;
 });
 </script>
 <h1>Adding Profiles</h1>
-<p id="error"></p>
+<!--<p id="error"></p>-->
 
 <form id="f2"  class="form-group" action="index.php" method="POST" onsubmit="return validateForm()">
 <lable class="col-sm-2 col-form-label">First Name</lable>

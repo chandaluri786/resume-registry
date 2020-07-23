@@ -46,6 +46,19 @@ if (isset($_POST['add'])) {
     $stmt->execute(array(':ui' => $_SESSION['user_id'], ':fn' => htmlentities($_POST['first_name']), ':ln' => htmlentities($_POST['last_name']), ':e' => htmlentities($_POST['email']), ':h' => htmlentities($_POST['headline']), ':s' => htmlentities($_POST['summary'])));
     // $stmt->debugDumpParams();
     $pid = $conn->lastInsertId();
+    function validateForm()
+    {
+        $fn = $_POST["first_name"];
+    $ln = $_POST["last_name"];
+    $e = $_POST["email"];
+    $h = $_POST["headline"];
+    $s = $_POST["summary"];
+    if (strlen($fn) == 0||strlen($ln) == 0||strlen($e) == 0||strlen($h) == 0||strlen($s) == 0)
+    {
+        return "All values are required";
+    }
+    return true;
+        }
 
     function validatePos()
     {
@@ -80,7 +93,13 @@ if (isset($_POST['add'])) {
 
         $_SESSION['add_error'] = validatePos();
         header('Location: add.php');
-    } else {
+    } 
+    else if (validateForm() != 1)
+    {
+        $_SESSION['add_error'] = validateForm();
+        header('Location: add.php');
+    }
+    else {
         unset($_SESSION['add_error']);
         echo '<h6>Profile added</h6>';
         //header('Location: ' . $_SERVER['REQUEST_URI']);
