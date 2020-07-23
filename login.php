@@ -8,6 +8,9 @@ if(isset( $_SESSION['error']))
     </tr>
     <?php
 }
+//echo $_POST['password'];
+//$password = hash('md5',$salt.htmlentities($_POST['password']));
+  //  echo $password;
 ?>
 <html>
 <head>
@@ -16,13 +19,13 @@ if(isset( $_SESSION['error']))
 </head>
 <body>
 <form id="f1" class="form-group" action="index.php" method="POST" onsubmit="return validateForm()">
-<lable>Email</lable>
-<input type="textbox" id="username" name="username" >
+<lable>email</lable>
+<input type="textbox" id="email" name="email" >
 <br>
-<lable>password</lable>
-<input type="password" id="password" name="password" >
+<lable>pass</lable>
+<input type="password" id="pass" name="pass" >
 <br>
-<input type="submit" name="login" value="Login">
+<input type="submit" name="login" value="Log In">
 <button><a href="index.php">Cancel</a></button>
 </form>
 <script>

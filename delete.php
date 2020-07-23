@@ -25,7 +25,7 @@ if ($res->user_id == $_SESSION['user_id']) {
 </form>";
 
 } else {
-    echo "You cannot delete this record"."<br>";
+    echo "You cannot delete this record" . "<br>";
     echo "<button><a href=\"index.php\">Cancel</a>";
 
 }
